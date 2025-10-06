@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brew Haven Café | Artisanal Coffee & Pastries</title>
+    <title>Coffee Cafe 9 | Crafted Brews & Conversations</title>
 
     <!-- Bootstrap -->
     <link
@@ -17,15 +17,164 @@
       rel="stylesheet"
     />
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* --- Global Styles --- */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #fffaf3;
+        color: #3b2f2f;
+        scroll-behavior: smooth;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* --- Navbar --- */
+      .navbar {
+        background: linear-gradient(90deg, #4e342e, #3e2723);
+      }
+      .navbar a.nav-link {
+        color: #f5f5f5 !important;
+        font-weight: 500;
+      }
+      .navbar a.nav-link:hover {
+        color: #d0a96c !important;
+      }
+
+      /* --- Hero --- */
+      .hero {
+        background: url("https://images.unsplash.com/photo-1498804103079-a6351b050096")
+          center/cover no-repeat;
+        height: 100vh;
+        position: relative;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(36, 20, 15, 0.6);
+      }
+      .hero .container {
+        position: relative;
+        z-index: 2;
+      }
+      .btn-gold {
+        background: linear-gradient(90deg, #d0a96c, #c8963e);
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      .btn-gold:hover {
+        background: linear-gradient(90deg, #c8963e, #d0a96c);
+        transform: scale(1.05);
+      }
+
+      /* --- Section --- */
+      .section-title {
+        color: #3e2723;
+        font-weight: 700;
+        position: relative;
+      }
+      .section-title::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 80px;
+        background: linear-gradient(90deg, #d0a96c, #c8963e);
+        margin: 10px auto;
+      }
+      .section {
+        animation: fadeSlide 1s ease both;
+      }
+
+      /* --- Menu & Cards --- */
+      .menu-card {
+        border: none;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+      .menu-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+      .menu-heading {
+        color: #6f4e37;
+      }
+      .price-tag {
+        color: #d0a96c;
+        font-weight: 600;
+      }
+
+      /* --- Events --- */
+      .event-card {
+        background: #fff;
+        transition: 0.3s;
+      }
+      .event-card:hover {
+        background: #fff3e0;
+        transform: translateY(-5px);
+      }
+
+      /* --- Contact --- */
+      .contact-form {
+        background: #ffffff;
+        border-radius: 10px;
+      }
+      .contact-form .btn-gold {
+        background: linear-gradient(90deg, #d0a96c, #c8963e);
+      }
+      .contact-form .btn-gold:hover {
+        background: linear-gradient(90deg, #c8963e, #d0a96c);
+      }
+
+      /* --- Footer --- */
+      footer {
+        background: linear-gradient(90deg, #3e2723, #4e342e);
+        font-size: 0.9rem;
+      }
+
+      /* --- Animation --- */
+      @keyframes fadeSlide {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in {
+        animation: fadeSlide 1.2s ease forwards;
+      }
+
+      /* --- Responsive --- */
+      @media (max-width: 768px) {
+        .hero {
+          height: 80vh;
+        }
+        .hero h1 {
+          font-size: 2.4rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Brew Haven Café</a>
+        <a class="navbar-brand fw-bold" href="#">Coffee Cafe 9</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -38,99 +187,151 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#testimonials">Testimonials</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero d-flex align-items-center text-center text-white">
+    <!-- Hero -->
+    <header class="hero text-center text-white d-flex align-items-center">
       <div class="container fade-in">
-        <h1 class="display-4 fw-bold">Brew Haven Café</h1>
-        <p class="lead">Crafting joy, one perfect cup at a time ☕</p>
-        <a href="#menu" class="btn btn-gold btn-lg mt-3">View Our Menu</a>
+        <h1 class="display-4 fw-bold">Coffee Cafe 9</h1>
+        <p class="lead">Brewing Memories Since 2015 ☕</p>
+        <a href="#menu" class="btn btn-gold btn-lg mt-3">Discover Our Menu</a>
       </div>
     </header>
 
     <!-- About -->
     <section id="about" class="py-5 section">
-      <div class="container text-center">
-        <h2 class="section-title">About Us</h2>
-        <p class="mt-4 mx-auto w-75">
-          Welcome to <strong>Brew Haven Café</strong> — Pune’s favourite corner
-          for freshly roasted coffee and soulful bites. Inspired by India’s rich
-          café culture, our mission is simple: blend warmth, creativity, and
-          flavour in every experience. Whether it’s a morning espresso, masala
-          chai, or a warm croissant after work — we’re here to serve comfort.
-        </p>
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348"
+              class="img-fluid rounded shadow-sm"
+              alt="Inside Coffee Cafe 9 Delhi"
+            />
+          </div>
+          <div class="col-md-6">
+            <h2 class="section-title">Our Story</h2>
+            <p>
+              Nestled in the heart of South Delhi, <strong>Coffee Cafe 9</strong>
+              began in 2015 as a cosy neighbourhood café where passion for fine brews
+              meets everyday stories. What started in Malviya Nagar with a tiny
+              espresso machine has grown into a creative hub for artists,
+              freelancers, and coffee enthusiasts across Delhi NCR.
+            </p>
+            <p>
+              We roast premium beans from Coorg, Araku Valley and Chikmagalur,
+              serve handcrafted beverages, and pair them with comforting Indian and
+              continental bakes. Whether you’re brainstorming ideas, meeting friends,
+              or seeking quiet moments — Coffee Cafe 9 is your perfect Delhi corner for
+              warmth and inspiration.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Menu -->
     <section id="menu" class="py-5 bg-light section">
       <div class="container">
-        <h2 class="section-title text-center">Our Menu</h2>
+        <h2 class="section-title text-center">Our Menu</h2>
         <div class="row mt-4 g-4">
           <div class="col-md-4">
-            <div class="card menu-card h-100">
-              <div class="card-body text-center">
-                <h3 class="menu-heading">Signature Coffees</h3>
-                <p>Espresso ₹120 | Cold Brew ₹160 | Filter Coffee ₹90</p>
-                <p class="price-tag">₹90 – ₹180</p>
+            <div class="card menu-card h-100 text-center">
+              <div class="card-body">
+                <h3 class="menu-heading">Signature Coffees</h3>
+                <p>
+                  Indian Filter ₹90 | Cafe Mocha ₹180 | Cappuccino ₹160 | Cold Brew ₹200
+                </p>
+                <p class="price-tag">₹90 – ₹200</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card menu-card h-100">
-              <div class="card-body text-center">
-                <h3 class="menu-heading">Delightful Snacks</h3>
-                <p>Samosa Croissant ₹90 | Paneer Wrap ₹150 | Veg Quiche ₹130</p>
-                <p class="price-tag">₹90 – ₹180</p>
+            <div class="card menu-card h-100 text-center">
+              <div class="card-body">
+                <h3 class="menu-heading">Bites & Breakfast</h3>
+                <p>
+                  Aloo Wrap ₹120 | Veg Club ₹150 | Egg Scramble ₹130 | Cheese Toast ₹90
+                </p>
+                <p class="price-tag">₹90 – ₹180</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card menu-card h-100">
-              <div class="card-body text-center">
-                <h3 class="menu-heading">Desserts & Pastries</h3>
-                <p>Chocolate Tart ₹120 | Cheesecake ₹160 | Brownie ₹100</p>
-                <p class="price-tag">₹100 – ₹180</p>
+            <div class="card menu-card h-100 text-center">
+              <div class="card-body">
+                <h3 class="menu-heading">Desserts & Pastries</h3>
+                <p>
+                  Chocolate Truffle ₹150 | Tiramisu ₹170 | Brownie ₹120 | Waffles ₹160
+                </p>
+                <p class="price-tag">₹120 – ₹180</p>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#contact" class="btn btn-gold">Order Now ★</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-5 section">
+      <div class="container text-center">
+        <h2 class="section-title">Gallery</h2>
+        <div class="row g-3 mt-4">
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0"
+              class="img-fluid rounded shadow-sm"
+              alt="Coffee art"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+              class="img-fluid rounded shadow-sm"
+              alt="Coffee beans"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+              class="img-fluid rounded shadow-sm"
+              alt="Pastries"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-5 section">
+    <!-- Events -->
+    <section id="events" class="py-5 bg-light section">
       <div class="container text-center">
-        <h2 class="section-title">What Our Customers Say</h2>
-        <div id="carouselTestimonials" class="carousel slide mt-4" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <blockquote class="blockquote">
-                <p class="mb-4">
-                  “Best cappuccino in Pune — and their breakfast toasties are perfection!”
-                </p>
-                <footer class="blockquote-footer">Radhika Sharma</footer>
-              </blockquote>
+        <h2 class="section-title">Events & Workshops</h2>
+        <p class="mt-3 mb-4">
+          From live music nights to latte‑art workshops, Coffee Cafe 9 brings Delhi’s
+          creative community together over coffee and conversation.
+        </p>
+        <div class="row g-4 mt-2">
+          <div class="col-md-6">
+            <div class="event-card p-4 rounded shadow-sm">
+              <h4>Acoustic Sundays 🎸</h4>
+              <p>Relax every Sunday evening with soulful tunes and fresh brews.</p>
+              <p><strong>Timings:</strong> 7 pm – 9 pm | Entry Free</p>
             </div>
-            <div class="carousel-item">
-              <blockquote class="blockquote">
-                <p class="mb-4">“Great vibe, local art on walls, and super friendly baristas.”</p>
-                <footer class="blockquote-footer">Aman Desai</footer>
-              </blockquote>
-            </div>
-            <div class="carousel-item">
-              <blockquote class="blockquote">
-                <p class="mb-4">“The brownies alone are worth the trip — rich and fudgy!”</p>
-                <footer class="blockquote-footer">Priya Mehta</footer>
-              </blockquote>
+          </div>
+          <div class="col-md-6">
+            <div class="event-card p-4 rounded shadow-sm">
+              <h4>Latte Art Workshop 🎨</h4>
+              <p>Master the craft of coffee design with our expert baristas.</p>
+              <p><strong>Next Batch:</strong> Sat 10 am | ₹499 (includes drink)</p>
             </div>
           </div>
         </div>
@@ -138,31 +339,46 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-5 bg-light section">
-      <div class="container">
-        <h2 class="section-title text-center">Contact Us</h2>
-        <div class="row mt-4 justify-content-center">
+    <section id="contact" class="py-5 section">
+      <div class="container text-center">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="mb-4">Love coffee? We'd love to see you soon in Delhi!</p>
+
+        <div class="row justify-content-center">
           <div class="col-md-6">
             <form class="contact-form p-4 shadow-sm rounded">
               <div class="mb-3">
-                <label for="name" class="form-label">Your Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Ananya Sharma" required />
+                <input type="text" class="form-control" placeholder="Your Name" required />
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com" required />
+                <input type="email" class="form-control" placeholder="Your Email" required />
               </div>
               <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Write to us..." required></textarea>
+                <textarea class="form-control" rows="3" placeholder="Message ..." required></textarea>
               </div>
-              <button type="submit" class="btn btn-gold w-100">Send Message</button>
+              <button type="submit" class="btn btn-gold w-100">Send Message</button>
             </form>
           </div>
         </div>
-        <div class="text-center mt-4">
-          <p><strong>Location:</strong> Baner Road, Pune – 411045</p>
-          <p><strong>Timings:</strong> 8 am – 10 pm (All Days)</p>
+
+        <div class="mt-4">
+          <p>
+            <strong>📍 Address:</strong> 143, Khirki Extension, Malviya Nagar, New Delhi, Delhi 110017
+          </p>
+          <p><strong>📞 Phone:</strong> +91 98800 11223</p>
+          <p><strong>🕒 Hours:</strong> 8 am – 11 pm | Open Every Day</p>
+          <p><strong>📧 Email:</strong> hello@coffeecafe9.in</p>
+        </div>
+
+        <div class="mt-4">
+          <iframe
+            src="https://maps.app.goo.gl/5tC3yKDjGpmKCBWu6"
+            width="100%"
+            height="320"
+            style="border:0; border-radius:10px;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -170,7 +386,7 @@
     <!-- Footer -->
     <footer class="text-center py-4 text-white">
       <p class="mb-0">
-        © 2025 Brew Haven Café | Crafted with ❤️ in India
+        © 2025 Coffee Cafe 9 | Roasted with ❤️ at Malviya Nagar, New Delhi
       </p>
     </footer>
 
