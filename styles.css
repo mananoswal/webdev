@@ -1,22 +1,31 @@
+/* --- Global Styles --- */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fff;
-  color: #333;
+  color: #3b2f2f;
+  background-color: #fffaf4;
   scroll-behavior: smooth;
 }
 
-.navbar {
-  background: linear-gradient(90deg, #1a1a2e, #16213e);
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
 }
 
+/* --- Navbar --- */
+.navbar {
+  background: linear-gradient(90deg, #4e342e, #3e2723);
+}
+.navbar a.nav-link {
+  color: #f5f5f5 !important;
+  font-weight: 500;
+}
 .navbar a.nav-link:hover {
-  color: #00c9a7 !important;
+  color: #d0a96c !important;
 }
 
 /* --- Hero Section --- */
 .hero {
   background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93')
-    center center / cover no-repeat;
+    center/cover no-repeat;
   height: 100vh;
   position: relative;
 }
@@ -27,125 +36,120 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(46, 27, 23, 0.6);
 }
 .hero .container {
-  position: relative;
   z-index: 2;
+  position: relative;
 }
-.fade-in {
-  animation: fadeIn 1.5s ease-in-out;
-}
-.fade-in-delay {
-  animation: fadeIn 2s ease-in-out;
-}
-
-/* --- Sections --- */
-.section {
-  animation: fadeSlide 1.2s ease-in-out both;
-}
-
-.section-title {
+.btn-gold {
+  background: linear-gradient(90deg, #d0a96c, #c8963e);
+  border: none;
+  color: #fff;
   font-weight: 600;
-  letter-spacing: 1px;
-  color: #16213e;
+  transition: all 0.3s ease-in;
+}
+.btn-gold:hover {
+  background: linear-gradient(90deg, #c8963e, #d0a96c);
+  transform: scale(1.05);
+}
+
+/* --- Section Titles --- */
+.section-title {
+  color: #3e2723;
+  font-weight: 700;
   position: relative;
   display: inline-block;
-  margin-bottom: 15px;
 }
 .section-title::after {
   content: '';
   display: block;
   width: 60%;
   height: 3px;
-  background: linear-gradient(90deg, #00c9a7, #005f73);
-  margin: 6px auto 0;
+  background: linear-gradient(90deg, #d0a96c, #c8963e);
+  margin: 8px auto 0;
   border-radius: 2px;
+}
+
+/* --- Sections --- */
+.section {
+  animation: fadeSlide 1.2s ease both;
 }
 
 /* --- Menu Cards --- */
 .menu-card {
-  transition: transform 0.3s, box-shadow 0.3s;
   border: none;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 .menu-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 .menu-heading {
-  color: #007a74;
-  font-weight: 600;
+  color: #6f4e37;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 .price-tag {
-  color: #00c9a7;
-  font-weight: 500;
+  color: #d0a96c;
+  font-weight: 600;
 }
 
 /* --- Testimonials --- */
 #testimonials blockquote {
   font-size: 1.2rem;
-  color: #333;
+  color: #4e342e;
   font-style: italic;
 }
 #testimonials footer {
-  color: #007a74;
+  color: #6d4c41;
 }
 
-/* --- Contact Form --- */
+/* --- Contact --- */
 .contact-form {
   background: #ffffff;
   border-radius: 12px;
 }
-.contact-form label {
+.contact-form .form-label {
   font-weight: 500;
-  color: #16213e;
+  color: #4e342e;
 }
-.contact-form .btn-primary {
-  background: linear-gradient(90deg, #00c9a7, #007a74);
-  border: none;
-  transition: background 0.3s ease-in-out;
+.contact-form .btn-gold {
+  background: linear-gradient(90deg, #d0a96c, #c8963e);
 }
-.contact-form .btn-primary:hover {
-  background: linear-gradient(90deg, #007a74, #00c9a7);
+.contact-form .btn-gold:hover {
+  background: linear-gradient(90deg, #c8963e, #d0a96c);
 }
 
 /* --- Footer --- */
 footer {
-  background: linear-gradient(90deg, #16213e, #1a1a2e);
+  background: linear-gradient(90deg, #3e2723, #4e342e);
 }
 
 /* --- Animations --- */
-@keyframes fadeIn {
-  from {
+@keyframes fadeSlide {
+  0% {
     opacity: 0;
     transform: translateY(30px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in {
+  animation: fadeSlide 1.2s ease forwards;
 }
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
   .hero {
     height: 80vh;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
   }
 }
