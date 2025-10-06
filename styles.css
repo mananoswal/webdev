@@ -1,29 +1,151 @@
 body {
-    font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #333;
+  scroll-behavior: smooth;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
+.navbar {
+  background: linear-gradient(90deg, #1a1a2e, #16213e);
 }
 
-section {
-    padding: 60px 0;
+.navbar a.nav-link:hover {
+  color: #00c9a7 !important;
 }
 
-header {
-    background-image: url('cafe.jpg'); /* replace with your own image */
-    background-size: cover;
-    background-position: center;
+/* --- Hero Section --- */
+.hero {
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93')
+    center center / cover no-repeat;
+  height: 100vh;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+.fade-in-delay {
+  animation: fadeIn 2s ease-in-out;
 }
 
-blockquote {
-    font-size: 1.2em;
-    text-align: center;
-    margin: 0;
+/* --- Sections --- */
+.section {
+  animation: fadeSlide 1.2s ease-in-out both;
 }
 
-blockquote footer {
-    margin-top: 15px;
-    color: #666;
+.section-title {
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #16213e;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #00c9a7, #005f73);
+  margin: 6px auto 0;
+  border-radius: 2px;
+}
+
+/* --- Menu Cards --- */
+.menu-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+.menu-heading {
+  color: #007a74;
+  font-weight: 600;
+}
+.price-tag {
+  color: #00c9a7;
+  font-weight: 500;
+}
+
+/* --- Testimonials --- */
+#testimonials blockquote {
+  font-size: 1.2rem;
+  color: #333;
+  font-style: italic;
+}
+#testimonials footer {
+  color: #007a74;
+}
+
+/* --- Contact Form --- */
+.contact-form {
+  background: #ffffff;
+  border-radius: 12px;
+}
+.contact-form label {
+  font-weight: 500;
+  color: #16213e;
+}
+.contact-form .btn-primary {
+  background: linear-gradient(90deg, #00c9a7, #007a74);
+  border: none;
+  transition: background 0.3s ease-in-out;
+}
+.contact-form .btn-primary:hover {
+  background: linear-gradient(90deg, #007a74, #00c9a7);
+}
+
+/* --- Footer --- */
+footer {
+  background: linear-gradient(90deg, #16213e, #1a1a2e);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero {
+    height: 80vh;
+  }
 }
